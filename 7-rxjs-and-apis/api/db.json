@@ -1,0 +1,25 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "The Alchemist",
+      "author": "Paulo Cohelo",
+      "price": 23,
+      "rating": 2
+    },
+    {
+      "title": "Power of now",
+      "author": "Eckhart Tolle",
+      "rating": 5,
+      "price": 14,
+      "id": 2
+    },
+    {
+      "title": "4 hour work week",
+      "author": "Tim Ferris",
+      "price": 23,
+      "rating": 5,
+      "id": 3
+    }
+  ]
+}

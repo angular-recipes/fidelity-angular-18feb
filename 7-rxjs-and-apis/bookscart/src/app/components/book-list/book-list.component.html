@@ -1,0 +1,17 @@
+{{today | date:'dd = MM = yyyy'}}
+<div 
+  *ngFor="let book of books;let i = index" 
+  class="book"
+  [hidden]="book.rating < 2"
+  [class.highRated]="book.rating==5"
+>
+  <a routerLink="/book/{{book.id}}" class="title">{{book.title | lowercase}}</a>
+  <div class="author">{{book.author | lastNameFirst:';'}}</div>
+  <div>{{book.price | currency:'EUR':false:'2.1-3'}}</div>
+  <div>{{book.rating | number:'3.1-3'}}</div>
+  <div>
+    <button (click)="rateUp(book)">&uarr;</button>
+    <button (click)="rateDown(book)">&darr;</button>
+    <button (click)="addToCart(book)">+</button>
+  </div>
+</div>

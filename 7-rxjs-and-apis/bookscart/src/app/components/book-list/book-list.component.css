@@ -1,0 +1,15 @@
+.title {
+    font-weight: bold;
+    color: navy;
+}
+.author {
+    font-style: italic;
+}
+.book {
+    background-color: papayawhip;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+.highRated {
+    background-color: chartreuse;
+}
