@@ -1,0 +1,10 @@
+{{today | date:'dd = MM = yyyy'}}
+<div *ngFor="let book of books">
+  <app-book-item 
+    [book]="book"
+    (rateUpClick)="rateUp($event)"
+    (rateDownClick)="rateDown($event)"
+    (addToCartClick)="addToCart($event)"
+  >
+  </app-book-item>
+</div>

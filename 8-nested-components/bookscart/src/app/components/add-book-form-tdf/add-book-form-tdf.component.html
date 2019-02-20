@@ -1,0 +1,44 @@
+<div class="error" *ngIf="addBookForm.invalid && (addBookForm.touched || addBookForm.dirty)">There is some problem with the form. Please fix the errors before proceeding.</div>
+<form #addBookForm="ngForm" (ngSubmit)="save()">
+  <div>
+    Title:
+    <input #title="ngModel" name="title" type="text" [(ngModel)]="book.title" required minlength="4"/>
+    <div *ngIf="title.touched || title.dirty">
+      <div class="error" *ngIf="title.errors?.required">
+        Title is required
+      </div>
+      <div class="error" *ngIf="title.errors?.minlength">
+        At least 4 characters
+      </div>
+    </div>
+  </div>
+  <div>
+    Author:
+    <input #author="ngModel" name="author" type="text" [(ngModel)]="book.author" required/>
+    <div *ngIf="author.touched || author.dirty">
+      <div class="error" *ngIf="author.errors?.required">
+        Author is required.
+      </div>
+    </div>
+  </div>
+  <div>
+    Price:
+    <input name="price" type="text" [(ngModel)]="book.price" />
+  </div>
+  <div>
+    Rating:
+    <select name="rating" [(ngModel)]="book.rating">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <button type="submit" [disabled]="addBookForm.invalid">Submit</button>
+</form>
+
+
+{{book | json}}
+Valid: {{addBookForm.valid}}
+Title: {{title.errors | json}}
